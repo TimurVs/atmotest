@@ -1,0 +1,35 @@
+<div class='input-container'>
+    <form class='form-container' [formGroup]="coalInputForm" (ngSubmit)="onSubmit(coalInputForm)">
+      <p>Введите расход угля</p>
+      <mat-form-field appearance='outline'>
+        <mat-label>Расход угля</mat-label>
+        <input type='number' matInput formControlName="coalConsumption" placeholder="Введите расход угля (тонн)">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Введите дату</mat-label>
+        <input formControlName='date' matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button [disabled]="coalInputForm.invalid" class='form-button' mat-raised-button color="primary" type="submit">Отправить</button>
+    </form>
+
+
+  <form class='form-container' [formGroup]="gasInputForm" (ngSubmit)="onSubmit(gasInputForm)">
+    <p>Введите расход газа</p>
+    <mat-form-field appearance='outline'>
+      <mat-label>Расход газа</mat-label>
+      <input type='number' matInput formControlName="gasConsumption" placeholder="Введите расход газа (тонн)">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Введите дату</mat-label>
+      <input formControlName='date' matInput [matDatepicker]="picker2">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <button [disabled]="gasInputForm.invalid" class='form-button' mat-raised-button color="primary" type="submit">Отправить</button>
+  </form>
+</div>
+
